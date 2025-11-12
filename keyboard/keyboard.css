@@ -1,0 +1,355 @@
+/* Geez Virtual Keyboard Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+header h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+header p {
+    opacity: 0.8;
+    font-size: 1.1em;
+}
+
+main {
+    padding: 30px;
+}
+
+/* Output Section */
+.output-section {
+    margin-bottom: 30px;
+}
+
+.output-section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+#textOutput {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.5em;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: 'Noto Sans Ethiopic', 'Abyssinica SIL', 'Nyala', serif;
+    line-height: 1.6;
+}
+
+#textOutput:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #667eea;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: #764ba2;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn:active {
+    transform: translateY(0);
+}
+
+/* Keyboard Section */
+.keyboard-section {
+    margin-bottom: 30px;
+}
+
+.keyboard-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.layout-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.layout-btn {
+    padding: 12px 24px;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.layout-btn:hover {
+    background: #f0f0f0;
+}
+
+.layout-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.keyboard-layout {
+    display: none;
+}
+
+.keyboard-layout.active {
+    display: block;
+}
+
+.keyboard-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid #667eea;
+}
+
+.keyboard-info p {
+    color: #555;
+    font-size: 1em;
+}
+
+/* Fidel Section */
+.fidel-section {
+    margin-bottom: 25px;
+}
+
+.fidel-section h4 {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.key-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 8px;
+}
+
+.key {
+    padding: 15px 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.8em;
+    font-family: 'Noto Sans Ethiopic', 'Abyssinica SIL', 'Nyala', serif;
+    transition: all 0.2s ease;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.key:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+    transform: scale(1.05);
+}
+
+.key:active {
+    transform: scale(0.95);
+}
+
+.key.selected {
+    background: #764ba2;
+    color: white;
+    border-color: #764ba2;
+}
+
+.vowel-forms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+.vowel-key {
+    padding: 12px 15px;
+    border: 2px solid #667eea;
+    border-radius: 5px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.vowel-key:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.vowel-key:active {
+    transform: translateY(0);
+}
+
+/* Info Section */
+.info-section {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.info-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.info-section h4 {
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.info-section p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.info-section ul {
+    margin-left: 20px;
+    color: #666;
+}
+
+.info-section ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+footer p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+
+    .key-grid {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: 5px;
+    }
+
+    .key {
+        font-size: 1.5em;
+        padding: 12px 8px;
+        min-height: 50px;
+    }
+
+    .vowel-forms {
+        grid-template-columns: 1fr;
+    }
+
+    #textOutput {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .key-grid {
+        grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    }
+}

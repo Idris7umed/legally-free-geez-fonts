@@ -14,6 +14,18 @@ check the [“Commercial” section of the Gallery](https://fonts.geez.org#Comme
 to see if a font is listed there.
 
 
+## Geez Virtual Keyboard
+A web-based virtual keyboard for typing in Geez script is now available in the [keyboard](keyboard) directory!
+
+**Features:**
+- Complete Geez character set with all vowel forms
+- Ethiopic numerals and punctuation marks
+- Easy-to-use click interface
+- Copy to clipboard functionality
+- Responsive design for desktop and mobile
+
+[Try the Geez Keyboard →](keyboard/index.html)
+
 ## Downloads
 Downloads of the archive can be found here in the
 [Releases](https://github.com/geezorg/legally-free-geez-fonts/releases)
