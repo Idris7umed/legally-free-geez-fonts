@@ -11,7 +11,7 @@
         <header>
             <h1>ግእዝ ቁልፍ ሰሌዳ</h1>
             <h2>Geez Virtual Keyboard</h2>
-            <p>A virtual keyboard for typing in Geez script (Ethiopic/Eritrean languages)</p>
+            <p>A virtual keyboard for typing in Geez script - Full support for Tigrinya, Tigre, Amharic, and other Ethiopic/Eritrean languages</p>
         </header>
 
         <main>
@@ -29,6 +29,7 @@
                 <h3>Keyboard Layout</h3>
                 <div class="layout-selector">
                     <button class="layout-btn active" data-layout="fidel">Fidel (ፊደል)</button>
+                    <button class="layout-btn" data-layout="supplement">Extended (ተወሳኺ)</button>
                     <button class="layout-btn" data-layout="numbers">Numbers (ቁጥሮች)</button>
                     <button class="layout-btn" data-layout="punctuation">Punctuation (ስርዓተ ነጥብ)</button>
                 </div>
@@ -41,6 +42,30 @@
                     <div class="fidel-section">
                         <h4>Base Characters (consonants)</h4>
                         <div id="baseCharacters" class="key-grid"></div>
+                    </div>
+
+                    <div class="fidel-section">
+                        <h4>Vowel Forms (ግዕዝ)</h4>
+                        <div class="vowel-forms">
+                            <button class="vowel-key" data-form="0">ግዕዝ (ə)</button>
+                            <button class="vowel-key" data-form="1">ካዕብ (u)</button>
+                            <button class="vowel-key" data-form="2">ሣልስ (i)</button>
+                            <button class="vowel-key" data-form="3">ራብዕ (a)</button>
+                            <button class="vowel-key" data-form="4">ኃምስ (e/ē)</button>
+                            <button class="vowel-key" data-form="5">ሳድስ (ə/i)</button>
+                            <button class="vowel-key" data-form="6">ሳብዕ (o)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="supplementLayout" class="keyboard-layout">
+                    <div class="keyboard-info">
+                        <p>Extended Ge'ez characters from Ethiopic Supplement (U+1380-U+139F) - Used for scholarly and liturgical texts</p>
+                    </div>
+                    
+                    <div class="fidel-section">
+                        <h4>Supplement Base Characters</h4>
+                        <div id="supplementCharacters" class="key-grid"></div>
                     </div>
 
                     <div class="fidel-section">
@@ -75,15 +100,20 @@
             <div class="info-section">
                 <h3>About</h3>
                 <p>
-                    This virtual keyboard allows you to type in the Geez (Ge'ez) script, used for writing 
-                    Amharic, Tigrinya, Tigre, and other Ethiopian and Eritrean languages. The script is an 
-                    abugida, where each character represents a consonant with a vowel modification.
+                    This virtual keyboard provides complete Geez (Ge'ez) script support for Eritrean and Ethiopian languages. 
+                    It includes all standard characters plus labialized forms critical for Tigrinya and Tigre, 
+                    as well as extended characters for scholarly and liturgical texts. Geez is an abugida writing system 
+                    where each character represents a consonant with a vowel modification.
+                </p>
+                <p>
+                    <strong>Languages supported:</strong> Tigrinya (ትግርኛ), Tigre (ትግረ), Amharic (አማርኛ), Ge'ez (ግእዝ), and other Ethiopic languages.
                 </p>
                 <h4>How to use:</h4>
                 <ul>
                     <li>In Fidel mode: First click a base character (consonant), then click a vowel form to generate the complete character</li>
                     <li>Or click directly on any character to insert it</li>
-                    <li>Switch between Fidel, Numbers, and Punctuation tabs for different character sets</li>
+                    <li>Switch between tabs: Fidel (main characters), Extended (supplement characters), Numbers, and Punctuation</li>
+                    <li>Extended tab includes scholarly Ethiopic Supplement characters for advanced users</li>
                     <li>Use the Copy button to copy your text to clipboard</li>
                 </ul>
                 <h4>Character Reference:</h4>

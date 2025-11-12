@@ -1,10 +1,13 @@
 # ግእዝ ቁልፍ ሰሌዳ - Geez Virtual Keyboard
 
-A web-based virtual keyboard for typing in the Geez (Ge'ez) script, used for writing Amharic, Tigrinya, Tigre, and other Ethiopian and Eritrean languages.
+A web-based virtual keyboard for typing in the Geez (Ge'ez) script with complete support for Eritrean languages (Tigrinya and Tigre) and Ethiopian languages (Amharic, Ge'ez, and others). This keyboard includes all standard Ge'ez characters, labialized forms, and extended characters for scholarly use.
 
 ## Features
 
-- **Complete Geez Character Set**: All 35 base characters (consonants) with their 7 vowel forms
+- **Complete Geez Character Set**: All 39 standard base characters (consonants) with their 7 vowel forms
+- **Labialized Forms**: Includes ቈ (qʷä), ኈ (ḫʷä), ጐ (gʷä), and ጘ (ǧʷä) - essential for Tigrinya and Ge'ez
+- **Additional Characters**: Includes ዸ (ḏä) used in various dialects
+- **Ethiopic Supplement**: Extended characters (U+1380-U+139F) for scholarly and liturgical texts
 - **Ethiopic Numbers**: Traditional Ethiopic numeral system (፩-፼)
 - **Punctuation Marks**: Ethiopic-specific punctuation including word separator (፡), full stop (።), comma (፣), etc.
 - **Easy to Use**: Click-based interface for selecting characters
@@ -31,7 +34,8 @@ Simply open `index.html` in your web browser to start using the keyboard.
 
 ### Layout Tabs
 
-- **Fidel (ፊደል)**: Main character set with consonants and vowel forms
+- **Fidel (ፊደል)**: Main character set with all standard consonants and vowel forms, including labialized forms
+- **Extended (ተወሳኺ)**: Ethiopic Supplement characters for advanced scholarly and liturgical use
 - **Numbers (ቁጥሮች)**: Ethiopic numerals from 1 to 10,000
 - **Punctuation (ስርዓተ ነጥብ)**: Punctuation marks and symbols
 
@@ -57,11 +61,18 @@ Each Geez character has seven forms based on the vowel:
 
 ### Base Characters (Consonants)
 
-The keyboard includes all standard Geez base characters:
+The keyboard includes all standard Geez base characters, including important additions for Eritrean languages:
 
+**Standard bases (39 characters):**
 ```
-ሀ ለ ሐ መ ሠ ረ ሰ ሸ ቀ ቈ በ ቨ ተ ቸ ኀ ነ ኘ አ ከ ኸ ወ ዐ ዘ ዠ የ ደ ጀ ገ ጠ ጨ ጰ ጸ ፀ ፈ ፐ
+ሀ ለ ሐ መ ሠ ረ ሰ ሸ ቀ ቈ በ ቨ ተ ቸ ኀ ኈ ነ ኘ አ ከ ኸ ወ ዐ ዘ ዠ የ ደ ዸ ጀ ገ ጐ ጘ ጠ ጨ ጰ ጸ ፀ ፈ ፐ
 ```
+
+**Key additions for Tigrinya and Tigre:**
+- **ኈ** (U+1288) - ḫʷä (labialized ḫ)
+- **ጐ** (U+1310) - gʷä (labialized g)
+- **ጘ** (U+1318) - ǧʷä (labialized ǧ)
+- **ዸ** (U+12F8) - ḏä (emphatic d)
 
 ### Ethiopic Numbers
 
@@ -71,6 +82,16 @@ The keyboard includes all standard Geez base characters:
 ፳ (20)   ፴ (30)   ፵ (40)   ፶ (50)   ፷ (60)
 ፸ (70)   ፹ (80)   ፺ (90)   ፻ (100)  ፼ (10,000)
 ```
+
+### Ethiopic Supplement Characters
+
+The Extended tab includes scholarly characters from the Ethiopic Supplement block (U+1380-U+139F):
+
+```
+ᎀ ᎁ ᎂ ᎃ ᎄ ᎅ ᎆ ᎇ ᎈ ᎉ ᎊ ᎋ ᎌ ᎍ ᎎ ᎏ ᎐ ᎑ ᎒ ᎓
+```
+
+These characters are used primarily in scholarly editions of classical Ge'ez texts and liturgical manuscripts.
 
 ### Punctuation Marks
 
@@ -151,11 +172,13 @@ This keyboard tool is part of the Legally Free Geez Fonts project and is release
 
 Geez (ግእዝ, Gəʿəz) is an ancient South Semitic script that originated in the Kingdom of Aksum (present-day Ethiopia and Eritrea). It's an abugida writing system where each character represents a consonant with a vowel modification. The script is used to write:
 
-- **Amharic** (አማርኛ) - Official language of Ethiopia
-- **Tigrinya** (ትግርኛ) - Spoken in Eritrea and northern Ethiopia
+- **Tigrinya** (ትግርኛ) - Official language of Eritrea and spoken in northern Ethiopia
 - **Tigre** (ትግረ) - Spoken in Eritrea
+- **Amharic** (አማርኛ) - Official language of Ethiopia
 - **Ge'ez** (ግእዝ) - Ancient liturgical language
 - And several other languages in the region
+
+This keyboard provides complete support for all these languages, with particular attention to Eritrean language requirements including all necessary labialized forms and extended characters.
 
 ## Resources
 
