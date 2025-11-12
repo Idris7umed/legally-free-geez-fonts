@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geez Virtual Keyboard - ግእዝ ቁልፍ ሰሌዳ</title>
+    <link rel="stylesheet" href="keyboard.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ግእዝ ቁልፍ ሰሌዳ</h1>
+            <h2>Geez Virtual Keyboard</h2>
+            <p>A virtual keyboard for typing in Geez script (Ethiopic/Eritrean languages)</p>
+        </header>
+
+        <main>
+            <div class="output-section">
+                <label for="textOutput">Text Output:</label>
+                <textarea id="textOutput" rows="6" placeholder="Click the keys below to type in Geez script..."></textarea>
+                <div class="controls">
+                    <button id="clearBtn" class="control-btn">Clear</button>
+                    <button id="copyBtn" class="control-btn">Copy Text</button>
+                    <button id="backspaceBtn" class="control-btn">⌫ Backspace</button>
+                </div>
+            </div>
+
+            <div class="keyboard-section">
+                <h3>Keyboard Layout</h3>
+                <div class="layout-selector">
+                    <button class="layout-btn active" data-layout="fidel">Fidel (ፊደል)</button>
+                    <button class="layout-btn" data-layout="numbers">Numbers (ቁጥሮች)</button>
+                    <button class="layout-btn" data-layout="punctuation">Punctuation (ስርዓተ ነጥብ)</button>
+                </div>
+
+                <div id="fidelLayout" class="keyboard-layout active">
+                    <div class="keyboard-info">
+                        <p>Click on a base character, then click a vowel form to insert the character</p>
+                    </div>
+                    
+                    <div class="fidel-section">
+                        <h4>Base Characters (consonants)</h4>
+                        <div id="baseCharacters" class="key-grid"></div>
+                    </div>
+
+                    <div class="fidel-section">
+                        <h4>Vowel Forms (ግዕዝ)</h4>
+                        <div class="vowel-forms">
+                            <button class="vowel-key" data-form="0">ግዕዝ (ə)</button>
+                            <button class="vowel-key" data-form="1">ካዕብ (u)</button>
+                            <button class="vowel-key" data-form="2">ሣልስ (i)</button>
+                            <button class="vowel-key" data-form="3">ራብዕ (a)</button>
+                            <button class="vowel-key" data-form="4">ኃምስ (e/ē)</button>
+                            <button class="vowel-key" data-form="5">ሳድስ (ə/i)</button>
+                            <button class="vowel-key" data-form="6">ሳብዕ (o)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="numbersLayout" class="keyboard-layout">
+                    <div class="keyboard-info">
+                        <p>Ethiopic numerals</p>
+                    </div>
+                    <div id="numberKeys" class="key-grid"></div>
+                </div>
+
+                <div id="punctuationLayout" class="keyboard-layout">
+                    <div class="keyboard-info">
+                        <p>Punctuation marks and symbols</p>
+                    </div>
+                    <div id="punctuationKeys" class="key-grid"></div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>About</h3>
+                <p>
+                    This virtual keyboard allows you to type in the Geez (Ge'ez) script, used for writing 
+                    Amharic, Tigrinya, Tigre, and other Ethiopian and Eritrean languages. The script is an 
+                    abugida, where each character represents a consonant with a vowel modification.
+                </p>
+                <h4>How to use:</h4>
+                <ul>
+                    <li>In Fidel mode: First click a base character (consonant), then click a vowel form to generate the complete character</li>
+                    <li>Or click directly on any character to insert it</li>
+                    <li>Switch between Fidel, Numbers, and Punctuation tabs for different character sets</li>
+                    <li>Use the Copy button to copy your text to clipboard</li>
+                </ul>
+                <h4>Character Reference:</h4>
+                <ul>
+                    <li><strong>ግዕዝ (Gəʿəz)</strong> - 1st form (ə)</li>
+                    <li><strong>ካዕብ (Kaʿəb)</strong> - 2nd form (u)</li>
+                    <li><strong>ሣልስ (Śalləs)</strong> - 3rd form (i)</li>
+                    <li><strong>ራብዕ (Rabəʿ)</strong> - 4th form (a)</li>
+                    <li><strong>ኃምስ (Ḫamməs)</strong> - 5th form (e/ē)</li>
+                    <li><strong>ሳድስ (Sadəs)</strong> - 6th form (ə/i)</li>
+                    <li><strong>ሳብዕ (Sabəʿ)</strong> - 7th form (o)</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>Part of the <a href="https://github.com/geezorg/legally-free-geez-fonts" target="_blank">Legally Free Geez Fonts</a> project</p>
+            <p>Compatible with all Unicode-compliant Geez fonts</p>
+        </footer>
+    </div>
+
+    <script src="keyboard.js"></script>
+</body>
+</html>
