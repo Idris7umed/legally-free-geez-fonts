@@ -18,6 +18,7 @@ const geezCharacters = [
     { base: 'ተ', code: 0x1270, name: 'tä' },    // ተ ቱ ቲ ታ ቴ ት ቶ
     { base: 'ቸ', code: 0x1278, name: 'čä' },    // ቸ ቹ ቺ ቻ ቼ ች ቾ
     { base: 'ኀ', code: 0x1280, name: 'ḫä' },    // ኀ ኁ ኂ ኃ ኄ ኅ ኆ
+    { base: 'ኈ', code: 0x1288, name: 'ḫʷä' },   // ኈ ኊ ኋ ኌ ኍ (labiovelar)
     { base: 'ነ', code: 0x1290, name: 'nä' },    // ነ ኑ ኒ ና ኔ ን ኖ
     { base: 'ኘ', code: 0x1298, name: 'ñä' },    // ኘ ኙ ኚ ኛ ኜ ኝ ኞ
     { base: 'አ', code: 0x12A0, name: 'ʾä' },    // አ ኡ ኢ ኣ ኤ እ ኦ
@@ -29,8 +30,11 @@ const geezCharacters = [
     { base: 'ዠ', code: 0x12E0, name: 'žä' },    // ዠ ዡ ዢ ዣ ዤ ዥ ዦ
     { base: 'የ', code: 0x12E8, name: 'yä' },    // የ ዩ ዪ ያ ዬ ይ ዮ
     { base: 'ደ', code: 0x12F0, name: 'dä' },    // ደ ዱ ዲ ዳ ዴ ድ ዶ
+    { base: 'ዸ', code: 0x12F8, name: 'ḏä' },    // ዸ ዹ ዺ ዻ ዼ ዽ ዾ
     { base: 'ጀ', code: 0x1300, name: 'ǧä' },    // ጀ ጁ ጂ ጃ ጄ ጅ ጆ
     { base: 'ገ', code: 0x1308, name: 'gä' },    // ገ ጉ ጊ ጋ ጌ ግ ጎ
+    { base: 'ጐ', code: 0x1310, name: 'gʷä' },   // ጐ ጒ ጓ ጔ ጕ (labiovelar)
+    { base: 'ጘ', code: 0x1318, name: 'ǧʷä' },   // ጘ ጙ ጚ ጛ ጜ ጝ ጞ
     { base: 'ጠ', code: 0x1320, name: 'ṭä' },    // ጠ ጡ ጢ ጣ ጤ ጥ ጦ
     { base: 'ጨ', code: 0x1328, name: 'č̣ä' },    // ጨ ጩ ጪ ጫ ጬ ጭ ጮ
     { base: 'ጰ', code: 0x1330, name: 'ṗä' },    // ጰ ጱ ጲ ጳ ጴ ጵ ጶ
@@ -64,6 +68,15 @@ const geezNumbers = [
     { char: '፼', name: '10,000' },
 ];
 
+// Ethiopic Supplement characters (U+1380-U+139F) - Extended Ge'ez for scholarly/liturgical use
+const geezSupplement = [
+    { base: 'ᎀ', code: 0x1380, name: 'sebatbeit mwä' },   // ᎀ ᎁ ᎂ ᎃ
+    { base: 'ᎄ', code: 0x1384, name: 'mwi' },             // ᎄ ᎅ ᎆ ᎇ
+    { base: 'ᎈ', code: 0x1388, name: 'sebatbeit bwä' },   // ᎈ ᎉ ᎊ ᎋ
+    { base: 'ᎌ', code: 0x138C, name: 'sebatbeit fwä' },   // ᎌ ᎍ ᎎ ᎏ
+    { base: '᎐', code: 0x1390, name: 'sebatbeit pwä' },   // ᎐ ᎑ ᎒ ᎓
+];
+
 // Ethiopic punctuation
 const geezPunctuation = [
     { char: '፡', name: 'Word separator' },
@@ -89,6 +102,7 @@ const clearBtn = document.getElementById('clearBtn');
 const copyBtn = document.getElementById('copyBtn');
 const backspaceBtn = document.getElementById('backspaceBtn');
 const baseCharacters = document.getElementById('baseCharacters');
+const supplementCharacters = document.getElementById('supplementCharacters');
 const numberKeys = document.getElementById('numberKeys');
 const punctuationKeys = document.getElementById('punctuationKeys');
 const layoutBtns = document.querySelectorAll('.layout-btn');
@@ -97,6 +111,7 @@ const vowelKeys = document.querySelectorAll('.vowel-key');
 // Initialize keyboard
 function init() {
     renderBaseCharacters();
+    renderSupplementCharacters();
     renderNumbers();
     renderPunctuation();
     attachEventListeners();
@@ -128,6 +143,37 @@ function renderBaseCharacters() {
         });
         
         baseCharacters.appendChild(key);
+    });
+}
+
+// Render Ethiopic Supplement characters
+function renderSupplementCharacters() {
+    if (!supplementCharacters) return; // Element may not exist yet
+    
+    supplementCharacters.innerHTML = '';
+    geezSupplement.forEach(char => {
+        const key = document.createElement('button');
+        key.className = 'key';
+        key.textContent = char.base;
+        key.title = `${char.name} - Click to select base, then choose vowel form`;
+        key.dataset.code = char.code;
+        key.dataset.name = char.name;
+        
+        key.addEventListener('click', () => {
+            // Remove previous selection
+            document.querySelectorAll('.key.selected').forEach(k => {
+                k.classList.remove('selected');
+            });
+            
+            // Select this character
+            key.classList.add('selected');
+            selectedBaseChar = char;
+            
+            // Insert the base character directly
+            insertCharacter(char.base);
+        });
+        
+        supplementCharacters.appendChild(key);
     });
 }
 
@@ -236,6 +282,7 @@ function switchLayout(layout) {
     
     const layoutMap = {
         'fidel': 'fidelLayout',
+        'supplement': 'supplementLayout',
         'numbers': 'numbersLayout',
         'punctuation': 'punctuationLayout'
     };
